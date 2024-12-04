@@ -16,7 +16,22 @@ GENERATED_USTRUCT_BODY()
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
-	TArray<float> joint_targets;
+	float x;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
+	float y;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
+	float z;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
+	float qx;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
+	float qy;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
+	float qz;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
+	float theta;
 };
 
 
@@ -43,7 +58,7 @@ protected:
 
 	TSharedPtr<IWebSocket> websocket;
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NMSAK2024")
 	FCmdInterface cmd;
 
 };

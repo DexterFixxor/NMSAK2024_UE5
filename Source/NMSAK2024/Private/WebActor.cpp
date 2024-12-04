@@ -23,6 +23,11 @@ void AWebActor::BeginPlay()
 		FModuleManager::Get().LoadModule("WebSockets");
 	}
 
+	cmd.x = 0;
+	cmd.y = 0;
+	cmd.z = 0;
+
+
 	this->websocket = FWebSocketsModule::Get().CreateWebSocket("ws://127.0.0.1:8000");
 	
 	this->websocket->OnConnected().AddLambda([]()
@@ -64,7 +69,6 @@ void AWebActor::Tick(float DeltaTime)
 
 void AWebActor::ParseMsg(const FString& msg)
 {
-	cmd.joint_targets.Empty();
 	FJsonObjectConverter::JsonObjectStringToUStruct(msg, &cmd);
 }
 
